@@ -7,7 +7,7 @@
 * composerのインストール手順でやった
 * なんかhomebrewでもいいらしい（ｯﾁ
     ```shell
-      brew install homebrew/php/composer
+    brew install homebrew/php/composer
     ```
 * とりあえず手作業でインストールする。
 * コマンドは下記の通り
@@ -26,12 +26,12 @@
     ```
 1. composerでインストールしたコマンドを使えるようにパスを通す
     ```shell
-    vi ~/.bash_profile
+    vi ~/.bash_profile
     ```
 * PATHの値に`:`でつなげて`~/.composer/vendor/bin`を入れる。
 * ダブルクォーテーションでくくられてるのでダブルクォーテーション内に記述する。
 * composerが確認するPHPバージョンを指定する
-  * composerはCLIのphpバージョンをみてよしなにしてくれるがどっちかというと実行環境に合わせたいのでPHPphpバージョンを指定したいことのほうが多い。
+  * composerはCLIのphpバージョンをみてよしなにしてくれるがどっちかというと実行環境に合わせたいのでPHPバージョンを指定したいことのほうが多い。
   * 今回はXAMPPに合わせた（正直PHP5.6に合わせておけば大体は大丈夫じゃろ。。。）
     ```shell
     vi ~/.composer/composer.json
@@ -46,7 +46,7 @@
         }
     }
     ```
-* なお、間違ってあとからPHPバージョンを指定する場合はcomposer.lockを削除してからインストールする。（キャッシュファイルになっている）
+* なお、間違ってあとからPHPバージョンを指定する場合はcomposer.lockを削除してからインストールする。（キャッシュファイルになっている）
 
 ## composer を使ってlalavelのCLIツールをインストールする
 
@@ -56,33 +56,32 @@
     composer global require "laravel/installer"
     ```
 
-## プロジェクトディレクトリでコマンドを実行してlaravelをセットアップ
+## プロジェクトディレクトリでコマンドを実行してlaravelをセットアップ
 
 * lalavelのバージョンは 5.4
 * composer でバージョン指定してインストール
     ```shell
-    composer create-project "laravel/lalravel=5.4.*" <projectName>
+    composer create-project "laravel/lalravel=5.4.*" <projectName>
     ```
 * ディレクトリのパーミッションを変更する
     ```shell
-    chmod -R 0700 path/to/project/storage/*
+    chmod -R 0700 path/to/project/storage/*
     ```
 * 0700で足りない場合は0777で
 
 ## 設定ファイルの変更
 
 * laravelには設定ファイルが2種類ある
-  * プロジェクトディレクトリ（以降はpjdと表記）にあるconfigディレクトリの中
+  * プロジェクトディレクトリ（以降はpjdと表記）にあるconfigディレクトリの中
     * 基本的な設定ファイル
   * pjd直下の.envファイル
     * 環境ごとに変える
 * それぞれ設定しておこう
 
-
 ## GIT管理する場合
 
 以下のファイルは初期化コミットのときにgitignoreに入れておくと楽になる
 
-```
-pjd/vendor
+```shell
+pjd/vendor
 ```
