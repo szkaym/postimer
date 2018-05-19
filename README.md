@@ -1,4 +1,4 @@
-# lalavel 設定手順
+# laravel 設定手順
 
 * macでの作業を記録しておく。
 
@@ -48,7 +48,7 @@
     ```
 * なお、間違ってあとからPHPバージョンを指定する場合はcomposer.lockを削除してからインストールする。（キャッシュファイルになっている）
 
-## composer を使ってlalavelのCLIツールをインストールする
+## composer を使ってlaravelのCLIツールをインストールする
 
 * <https://readouble.com/laravel/5.4/ja/installation.html>
 * インストーラをグローバルにインストールする
@@ -58,7 +58,7 @@
 
 ## プロジェクトディレクトリでコマンドを実行してlaravelをセットアップ
 
-* lalavelのバージョンは 5.4
+* laravelのバージョンは 5.4
 * composer でバージョン指定してインストール
     ```shell
     composer create-project "laravel/lalravel=5.4.*" <projectName>
