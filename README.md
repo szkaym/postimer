@@ -61,11 +61,11 @@
 * laravelのバージョンは 5.4
 * composer でバージョン指定してインストール
     ```shell
-    composer create-project "laravel/lalravel=5.4.*" <projectName>
+    composer create-project "laravel/laravel=5.4.*" <projectName>
     ```
 * ディレクトリのパーミッションを変更する
     ```shell
-    chmod -R 0700 path/to/project/storage/*
+    chmod -R 0777 path/to/project/storage/*
     ```
 * 0700で足りない場合は0777で
 
