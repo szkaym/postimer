@@ -77,3 +77,29 @@
   * pjd直下の.envファイル
     * 環境ごとに変える
 * それぞれ設定しておこう
+
+
+## Laravel mix
+
+* laravelのbundler
+* プロジェクトディレクトリで `npm install` して使用可能になる
+* インストール時にエラーになっても気にしない
+* タスクは下記のファイルに記述
+    ```shell
+    /path/to/project/webpack.mix.js
+    ```
+* 全タスクを実行
+    ```shell
+    npm run dep
+    ```
+* 全タスクを実行して圧縮
+    ```shell
+    npm run production
+    ```
+* アセットの監視
+    ```shell
+    npm run watch
+    ```
+
+詳細は　<https://readouble.com/laravel/5.4/ja/mix.html> 参照
+
