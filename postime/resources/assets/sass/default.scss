@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
 a, abbr, acronym, address, applet, area, article, aside, audio, b, base, basefont,
 bdi, bdo, bgsound, big, blink, blockquote, body, br, button, canvas, caption, center,
 cite, code, col, colgroup, command, content, data, datalist, dd, del, details, dfn,
@@ -17,6 +20,10 @@ textarea, tfoot, th, thead, time, title, tr, track, tt, u, ul, var, video, wbr, 
     -moz-osx-font-smoothing: unset;
 }
 
+h1, h2, h3, h4, h5, h6{
+    font-feature-settings: "palt";
+}
+
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx) {
     .hoge {
@@ -27,6 +34,7 @@ textarea, tfoot, th, thead, time, title, tr, track, tt, u, ul, var, video, wbr, 
 
 $sky: #158eff;
 
+
 html {
     font-size: 6.24%;
 }
@@ -35,7 +43,96 @@ body {
     background: $sky;
     color: #fff;
     text-align: center;
-    font-size: 16rem;
+    font-size: 21rem;
+    font-family: Raleway;
+    font-weight: 300;
+}
+
+
+input{
+    display: inline-block;
+    font-size: 21rem;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: #fff;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-radius: 8pt;
+    
+    &[type="text"], &[type="password"], &[type="button"], &[type="submit"] {
+        padding: 5pt 10pt;
+    }
+
+    &[type="text"], &[type="password"], &[type="checkbox"], &[type="radio"] {
+        box-shadow: 0px 0px 3pt rgba(0,0,0,.3);
+        box-shadow: 1px 2px 2pt rgba(0,0,0,.2) inset;
+    }
+}
+input[type=checkbox], input[type=radio] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+
+input[type=checkbox]{
+    border-radius: 5px;
+    &:checked{
+        &:after{
+            content: "✔";
+            display: inline-block;
+            font-size: 18rem;
+            text-align: center;
+            width: 100%;
+        }
+    }
+}
+
+input[type=radio]{
+    border-radius: 100%;
+    &:checked{
+        background-color: rgb(73, 200, 231);
+        &:after{
+            content: "";
+            background: #000;
+            display: inline-block;
+            font-size: 12px;
+            text-align: center;
+            width: 50%;
+            height: 50%;
+            margin-top: 4px;
+            border-radius: 100%;
+        }
+    }
+}
+
+select {
+    opacity: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-block;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    vertical-align: middle;
+    background: #fff;
+    padding: 5px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.select_apiarance_button{
+    width: 60px;
+    display: block;
+    text-align: right;
+    padding-right: 5px;
 }
 
 #app > .wrapper {
@@ -59,19 +156,37 @@ body {
         height: 60px;
         font-size: 60rem;
         line-height: 110%;
+        box-shadow: 3pt 3pt 18pt rgba(0,0,0,.3);
     }
 }
 
-.form-item {
-    &+.form-item {
-        margin-top: 20px;
+#login-form {
+    .form-item {
+        &+.form-item {
+            margin-top: 20px;
+        }
+
+        .form-label, .form-input {
+            display: block;
+            line-height: 180%;
+        }
     }
 
-    .form-label, .form-input {
-        display: block;
+    .form-controlls {
+        margin-top: 40px;
     }
 }
 
-.form-controlls {
-    margin-top: 20px;
+.button {
+    display: inline-block;
+    font-size: 21rem;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: #fff;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-radius: 8pt;
+    padding: 5pt 10pt;
+    font-weight: 300;
 }
