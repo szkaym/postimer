@@ -10,7 +10,7 @@ map, mark, marquee, menu, menuitem, meta, meter, multicol, nav, nextid, nobr, no
 noframes, noscript, object, ol, optgroup, option, output, p, param, picture, plaintext,
 pre, progress, q, rp, rt, rtc, ruby, s, samp, script, section, select, shadow, slot, small,
 source, spacer, span, strike, strong, style, sub, summary, sup, table, tbody, td, template,
-textarea, tfoot, th, thead, time, title, tr, track, tt, u, ul, var, video, wbr, xmp{
+textarea, tfoot, th, thead, time, title, tr, track, tt, u, ul, var, video, wbr, xmp, h1, h2, h3, h4, h5, h6{
     margin: 0px;
     padding: 0px;
     -webkit-font-smoothing: subpixel-antialiased;
@@ -23,4 +23,55 @@ textarea, tfoot, th, thead, time, title, tr, track, tt, u, ul, var, video, wbr, 
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
+}
+
+$sky: #158eff;
+
+html {
+    font-size: 6.24%;
+}
+
+body {
+    background: $sky;
+    color: #fff;
+    text-align: center;
+    font-size: 16rem;
+}
+
+#app > .wrapper {
+    margin: 0px auto;
+    width: 70vw;
+}
+
+#logo {
+    margin: 0px auto;
+    margin-top: 10vh;
+    margin-bottom: 3vh;
+    text-align: center;
+    .adjuster {
+        margin: 0px auto;
+        background-color: #fff;
+        border-radius: 100%;
+        color: $sky;
+        border: solid 30px #fff;
+        display: block;
+        width: 60px;
+        height: 60px;
+        font-size: 60rem;
+        line-height: 110%;
+    }
+}
+
+.form-item {
+    &+.form-item {
+        margin-top: 20px;
+    }
+
+    .form-label, .form-input {
+        display: block;
+    }
+}
+
+.form-controlls {
+    margin-top: 20px;
 }

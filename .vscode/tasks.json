@@ -8,6 +8,20 @@
             "type": "shell",
             "command": "sudo /Applications/XAMPP/xamppfiles/xampp start",
             "problemMatcher": []
+        },
+
+        {
+            "label": "run php server",
+            "type": "shell",
+            "command": "php -S localhost:80 -t postime/public",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "run mysqld",
+            "type": "shell",
+            "command": "start /min c:/xampp/mysql_start.bat",
+            "problemMatcher": []
         }
     ]
 }
