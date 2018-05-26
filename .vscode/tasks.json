@@ -3,25 +3,41 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
 "tasks": [
-        {
-            "label": "run xampp",
-            "type": "shell",
-            "command": "sudo /Applications/XAMPP/xamppfiles/xampp start",
-            "problemMatcher": []
+    {
+        "label": "run php server",
+        "type": "shell",
+        "command": "php -S localhost:80 -t postime/public",
+        "presentation": {
+            "echo": true,
+            "reveal": "always",
+            "focus": false,
+            "panel": "new"
         },
-
-        {
-            "label": "run php server",
-            "type": "shell",
-            "command": "php -S localhost:80 -t postime/public",
-            "problemMatcher": []
+        "problemMatcher": []
+    },
+    {
+        "label": "run mysqld",
+        "type": "shell",
+        "command": "d:/xampp/mysql_start.bat",
+        "presentation": {
+            "echo": true,
+            "reveal": "always",
+            "focus": false,
+            "panel": "new"
         },
-
-        {
-            "label": "run mysqld",
-            "type": "shell",
-            "command": "start /min c:/xampp/mysql_start.bat",
-            "problemMatcher": []
-        }
-    ]
+        "problemMatcher": []
+    },
+    {
+        "label": "run laravel-mix",
+        "type": "shell",
+        "command": "./.vscode/watch.bat",
+        "presentation": {
+            "echo": true,
+            "reveal": "always",
+            "focus": false,
+            "panel": "new"
+        },
+        "problemMatcher": []
+    }
+]
 }
