@@ -41,6 +41,20 @@
                 "panel": "new"
             },
             "problemMatcher": []
+        },
+
+        {
+            "label": "run php server for mac",
+            "type": "shell",
+            "command": "sudo php -S localhost:80 -t postime/public",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "run mysqld for mac",
+            "type": "shell",
+            "command": "sudo /Applications/XAMPP/xamppfiles/bin/mysql.server start",
+            "problemMatcher": []
         }
     ]
 }
