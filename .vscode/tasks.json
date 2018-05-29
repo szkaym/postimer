@@ -7,7 +7,12 @@
         {
             "label": "run php server",
             "type": "shell",
-            "command": "php -S localhost:80 -t postime/public",
+            "windows": {
+                "command": "php -S localhost:80 -t postime/public",
+            },
+            "osx": {
+                "command": "sudo php -S localhost:80 -t postime/public",
+            },
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -20,7 +25,12 @@
         {
             "label": "run mysqld",
             "type": "shell",
-            "command": "c:/xampp/mysql_start.bat",
+            "windows": {
+                "command": "c:/xampp/mysql_start.bat",
+            },
+            "osx": {
+                "command": "sudo /Applications/XAMPP/xamppfiles/bin/mysql.server start",
+            },
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -28,32 +38,23 @@
                 "panel": "new"
             },
             "problemMatcher": []
-        }
+        },
 
         {
             "label": "run laravel-mix",
             "type": "shell",
-        "command": "./.vscode/watch.bat",
+            "windows": {
+                "command": "./.vscode/watch.bat",
+            },
+            "osx": {
+                "command": "sudo ./.vscode/watch.sh",
+            },
             "presentation": {
                 "echo": true,
                 "reveal": "always",
                 "focus": false,
                 "panel": "new"
             },
-            "problemMatcher": []
-        },
-
-        {
-            "label": "run php server for mac",
-            "type": "shell",
-            "command": "sudo php -S localhost:80 -t postime/public",
-            "problemMatcher": []
-        },
-
-        {
-            "label": "run mysqld for mac",
-            "type": "shell",
-            "command": "sudo /Applications/XAMPP/xamppfiles/bin/mysql.server start",
             "problemMatcher": []
         }
     ]
