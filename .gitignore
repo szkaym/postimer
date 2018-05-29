@@ -1,4 +1,11 @@
-postime/public/fonts/*
-postime/public/css/*.css
-postime/public/js/*.js
+!.vscode/
+.vscode/settings.json
+
 *.mwb.bak
+
+postime/public/fonts/*
+postime/public/css/*
+postime/public/js/*
+postime/public/img
+postime/*.lock
+postime/package-lock.json
