@@ -3,6 +3,12 @@
 
 @section('content')
 
+<div class="container">
+
+    Register
+
+</div>
+
 {{ Form::model($user, ['route'=>'register']) }}
 
 {{Form::input('text', 'user_name')}}
