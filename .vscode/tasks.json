@@ -3,41 +3,59 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
 "tasks": [
-    {
-        "label": "run php server",
-        "type": "shell",
-        "command": "php -S localhost:80 -t postime/public",
-        "presentation": {
-            "echo": true,
-            "reveal": "always",
-            "focus": false,
-            "panel": "new"
+
+        {
+            "label": "run php server",
+            "type": "shell",
+            "windows": {
+                "command": "php -S localhost:80 -t postime/public",
+            },
+            "osx": {
+                "command": "sudo php -S localhost:80 -t postime/public",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": []
         },
-        "problemMatcher": []
-    },
-    {
-        "label": "run mysqld",
-        "type": "shell",
-        "command": "d:/xampp/mysql_start.bat",
-        "presentation": {
-            "echo": true,
-            "reveal": "always",
-            "focus": false,
-            "panel": "new"
+
+        {
+            "label": "run mysqld",
+            "type": "shell",
+            "windows": {
+                "command": "c:/xampp/mysql_start.bat",
+            },
+            "osx": {
+                "command": "sudo /Applications/XAMPP/xamppfiles/bin/mysql.server start",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": []
         },
-        "problemMatcher": []
-    },
-    {
-        "label": "run laravel-mix",
-        "type": "shell",
-        "command": "./.vscode/watch.bat",
-        "presentation": {
-            "echo": true,
-            "reveal": "always",
-            "focus": false,
-            "panel": "new"
-        },
-        "problemMatcher": []
-    }
-]
+
+        {
+            "label": "run laravel-mix",
+            "type": "shell",
+            "windows": {
+                "command": "./.vscode/watch.bat",
+            },
+            "osx": {
+                "command": "sudo ./.vscode/watch.sh",
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
 }

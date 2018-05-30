@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Model\TUser;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -38,6 +38,17 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
+
+    /**
+     * over write of App\Http\Controllers\Auth\RegisterController
+     * check artisan command by `php artisan route:list`
+     */
+    public function showRegistrationForm()
+    {
+        $user = new TUser();
+        return view('auth.register')->with('user', $user);
+    }
+
 
     /**
      * Get a validator for an incoming registration request.

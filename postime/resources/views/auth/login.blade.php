@@ -1,69 +1,55 @@
-@extends('layouts.app')
+@extends('layouts.default')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+<div class="wrapper">
+    <!-- <h1 id="logo"><span class="adjuster">P</span></h1> -->
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
+    <h1 id="site-title">post it your work timestamp</h1>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+    <div id="login-form">
+        {{Form::open(['url'=>'/'])}}
+        
+            <div class="form-item">
+                <label class="form-label">your email</label>
+                <span class="form-input">{{ Form::input('text', 'user_email', old('user_email'), array('required'=>'required')) }}</span>
+            </div>
+            
+            <div class="form-item">
+                <label class="form-label">password</label>
+                <span class="form-input">{{ Form::input('password', 'user_password', old('user_email'), array('required'=>'required')) }}</span>
+            </div>
+            
+            <div class="form-item">
+                <label class="form-label">
+                    {{ Form::input('checkbox', 'remember', old('remember') ? 'checked' : '') }}
+                    <span class="form-label-tape">save login status</span>
+                </label>
+            </div>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+            <div class="form-controlls">
+                {{ Form::submit('Signin') }}
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+                <div class="foget-password">
+                    <a href="{{ route('password.request') }}">forget your password?</a>
                 </div>
             </div>
-        </div>
+
+        {{ Form::close() }}
     </div>
+
+    <div id="index-footer">
+        <p class="say-other">What is this ?</p>
+        <p class="say-postime">This is a mini blog for your working time records.</p>
+        <p class="say-other">How to do a registration?</p>
+        <p class="say-postime">see <a href="{{ route('register') }}">here</a>.</p>
+        <p class="say-other">Does it take time ?</p>
+        <p class="say-postime">A little. Sorry.</p>
+        <p class="say-other">A free ?</p>
+        <p class="say-postime">Of course!</p>
+        <p class="say-other">Why collection at my working timestamp ?</p>
+        <p class="say-postime">We study and learning of AI.<br>
+            we feedback to you the new feature, new services, graph of your post data ... etc.</p>
+    </div>
+
 </div>
 @endsection
