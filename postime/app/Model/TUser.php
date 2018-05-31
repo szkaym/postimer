@@ -9,9 +9,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class TUser extends Authenticatable
 {
     protected $guarded = ['id'];
-
+    
+    // specify of account password field
     public function getAuthPassword()
     {
         return $this->user_passwd;
     }
+
 }

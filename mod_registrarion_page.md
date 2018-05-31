@@ -28,7 +28,24 @@ namespace App\Model;
 {
 -    //
 +    protected $guarded = ['id'];
++
++    // specify of password field
++    public function getAuthPassword()
++    {
++        return $this->user_passwd;
++    }
 }
+```
+
+* loginControllerログインに使用するアカウント名のフィールドを指定する。
+* なんでこれモデルで指定できないのか。。。
+
+``` php
+    // specify of account name field
+    public function username()
+    {
+        return 'user_email';
+    }
 ```
 
 ## artisan コマンドでauthを追加
