@@ -2,18 +2,47 @@
 
 
 @section('content')
+<div id="app">
+    <div class="container">
+        <h1 id="logo"><span class="adjuster">P</span></h1>
+        <h2 id="page-title">Register in Postime</h2>
 
-<div class="container">
+        {{ Form::open(['route'=>'register', 'class'=>'form-group landscape']) }}
+        
+        <div class="form-item">
+            <label for="user_name">Your name</label>
+            <span class="form-input">{{ Form::input('text', 'user_name', old('user_name'), array('required'=>'required')) }}</span>
+        </div>
+        
+        <div class="form-item">
+            <label for="user_email">Email</label>
+            <span class="form-input">{{ Form::input('text', 'user_email', old('user_email'), array('required'=>'required')) }}</span>
+        </div>
+        
+        <div class="form-item">
+            <label for="user_password">Password</label>
+            <span class="form-input">{{ Form::input('text', 'user_password', old('user_password'), array('required'=>'required')) }}</span>
+        </div>
+        
+        <div class="form-item">
+            <label for="user_password">Confirm of password</label>
+            <span class="form-input">{{ Form::input('text', 'user_password', null, array('required'=>'required')) }}</span>
+        </div>
 
-    Register
+        <div class="form-controlls">
 
+            <div class="bord">
+                <h2>All input form are required.</h2>
+                <p>Read <a href="">Terms of service (JP)</a>.</p>
+            </div>
+
+            {{ Form::submit('OK, Sign up!') }}
+        </div>
+
+        {{ Form::close() }}
+
+    </div>
 </div>
-
-{{ Form::model($user, ['route'=>'register']) }}
-
-{{Form::input('text', 'user_name')}}
-
-{{ Form::close() }}
 
 @endsection
 
