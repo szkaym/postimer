@@ -3,7 +3,7 @@
 
 @section('content')
 <div id="app">
-    <div class="container">
+    <div class="wrapper">
         <h1 id="logo"><span class="adjuster">P</span></h1>
         <h2 id="page-title">Register in Postime</h2>
 
@@ -12,21 +12,39 @@
         <div class="form-item">
             <label for="user_name">Your name</label>
             <span class="form-input">{{ Form::input('text', 'user_name', old('user_name'), array('required'=>'required')) }}</span>
+
+            @if ($errors->has('user_name'))
+            <span class="form-error-display">
+                {{ $errors->first('user_name') }}
+            </span>
+            @endif
         </div>
         
         <div class="form-item">
             <label for="user_email">Email</label>
             <span class="form-input">{{ Form::input('text', 'user_email', old('user_email'), array('required'=>'required')) }}</span>
+            
+            @if ($errors->has('user_email'))
+            <span class="form-error-display">
+                {{ $errors->first('user_email') }}
+            </span>
+            @endif
         </div>
         
         <div class="form-item">
             <label for="user_password">Password</label>
             <span class="form-input">{{ Form::input('text', 'user_password', old('user_password'), array('required'=>'required')) }}</span>
+                        
+            @if ($errors->has('user_password'))
+            <span class="form-error-display">
+                {{ $errors->first('user_password') }}
+            </span>
+            @endif
         </div>
         
         <div class="form-item">
-            <label for="user_password">Confirm of password</label>
-            <span class="form-input">{{ Form::input('text', 'user_password', null, array('required'=>'required')) }}</span>
+            <label for="user_password_confirmation">Confirm of password</label>
+            <span class="form-input">{{ Form::input('text', 'user_password_confirmation', null, array('required'=>'required')) }}</span>
         </div>
 
         <div class="form-controlls">
@@ -66,8 +84,8 @@
                                     <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
                                     
                                     @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                    <span class="form-error-display">
+                                        {{ $errors->first('name') }}
                                     </span>
                                     @endif
                                 </div>
@@ -80,8 +98,8 @@
                                     <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
                                     
                                     @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                    <span class="form-error-display">
+                                        {{ $errors->first('email') }}
                                     </span>
                                     @endif
                                 </div>
@@ -94,8 +112,8 @@
                                     <input id="password" type="password" class="form-control" name="password" required>
                                     
                                     @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                    <span class="form-error-display">
+                                        {{ $errors->first('password') }}
                                     </span>
                                     @endif
                                 </div>
