@@ -2,9 +2,16 @@
 
 namespace App\Model;
 
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class TUser extends Model
+class TUser extends Authenticatable
 {
-    //
+    protected $guarded = ['id'];
+
+    public function getAuthPassword()
+    {
+        return $this->user_passwd;
+    }
 }

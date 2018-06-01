@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+
+a, abbr, acronym, address, applet, area, article, aside, audio, b, base, basefont,
+bdi, bdo, bgsound, big, blink, blockquote, body, br, button, canvas, caption, center,
+cite, code, col, colgroup, command, content, data, datalist, dd, del, details, dfn,
+dialog, dir, div, dl, dt, element, em, embed, fieldset, figcaption, figure, font,
+footer, form, frame, frameset, head, header, hgroup, hr, html, i, iframe, image,
+img, input, ins, isindex, kbd, keygen, label, legend, li, link, listing, main,
+map, mark, marquee, menu, menuitem, meta, meter, multicol, nav, nextid, nobr, noembed,
+noframes, noscript, object, ol, optgroup, option, output, p, param, picture, plaintext,
+pre, progress, q, rp, rt, rtc, ruby, s, samp, script, section, select, shadow, slot, small,
+source, spacer, span, strike, strong, style, sub, summary, sup, table, tbody, td, template,
+textarea, tfoot, th, thead, time, title, tr, track, tt, u, ul, var, video, wbr, xmp, h1, h2, h3, h4, h5, h6{
+    margin: 0px;
+    padding: 0px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: unset;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-feature-settings: "palt";
+}
+
+
+a {
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx) {
+    .hoge {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+$sky: #158eff;
+
+
+html {
+    font-size: 6.24%;
+}
+
+body {
+    color: #fff;
+    min-height: 100vh;
+    text-align: center;
+    font-size: 21rem;
+    font-family: Raleway;
+    font-weight: 300;
+    background: $sky url('/img/cloud.svg') no-repeat;
+    background-position: bottom;
+    background-size: auto;
+    @media screen and (min-width: 1200px) {
+        background-size: cover;
+    }
+}
+
+input{
+    line-height: 130%;
+    display: inline-block;
+    font-size: 18rem;
+    font-family: Raleway;
+    font-weight: 100;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: #fff;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-radius: 8pt;
+    
+    box-shadow: 0px 0px 30px rgba(80,80,80,0.4);
+    
+    &[type="text"], &[type="password"], &[type="button"], &[type="submit"] {
+        padding: 5pt 10pt;
+        cursor: pointer;
+    }
+
+    &[type="button"], &[type="submit"], &[type="resete"] {
+        font-weight: 100;
+        transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        &:hover {
+            box-shadow: 2px 2px 3px rgba(0,0,0,.4);
+            transform: translate(-2px, -2px)
+        }
+    }
+
+    &[type="text"], &[type="password"], &[type="checkbox"], &[type="radio"] {
+        box-shadow: 0px 0px 3pt rgba(0,0,0,.3);
+        box-shadow: 1px 2px 2pt rgba(0,0,0,.2) inset;
+    }
+}
+input[type=checkbox], input[type=radio] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    flex-flow: row;
+    justify-content: space-around;
+}
+
+input[type=checkbox]{
+    border-radius: 5px;
+    line-height: 2.5rem;
+
+    &:checked{
+        &:after{
+            content: "✔";
+            display: inline-block;
+            font-size: 18rem;
+            text-align: center;
+            width: 100%;
+        }
+    }
+}
+
+input[type=radio]{
+    border-radius: 100%;
+    &:checked{
+        background-color: rgb(73, 200, 231);
+        &:after{
+            content: "";
+            background: #000;
+            display: inline-block;
+            font-size: 12px;
+            text-align: center;
+            width: 50%;
+            height: 50%;
+            margin-top: 4px;
+            border-radius: 100%;
+        }
+    }
+}
+
+select {
+    opacity: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-block;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    vertical-align: middle;
+    background: #fff;
+    padding: 5px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+a {
+    display: inline-block;
+    color: inherit;
+    &:hover {
+        color: #fff;
+        text-shadow: 2px 2px 3px rgba(0,0,0,.4);
+        transform: translate(-2px, -2px)
+    }
+}
+
+.select_apiarance_button{
+    width: 60px;
+    display: block;
+    text-align: right;
+    padding-right: 5px;
+}

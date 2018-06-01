@@ -9,14 +9,17 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('css/default.css') }}" rel="stylesheet">
+
+    <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
+    <!-- <script src="{{ asset('js/popper.min.js') }}"></script> -->
+    <!-- <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script> -->
+    <!-- <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script> -->
 </head>
 <body>
-    <div id="app">
-@yield('content')
-    </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+@yield('content')
+    
 </body>
 </html>

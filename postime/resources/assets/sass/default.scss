@@ -1,148 +1,20 @@
 @charset "UTF-8";
+@import "_defined";
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-a, abbr, acronym, address, applet, area, article, aside, audio, b, base, basefont,
-bdi, bdo, bgsound, big, blink, blockquote, body, br, button, canvas, caption, center,
-cite, code, col, colgroup, command, content, data, datalist, dd, del, details, dfn,
-dialog, dir, div, dl, dt, element, em, embed, fieldset, figcaption, figure, font,
-footer, form, frame, frameset, head, header, hgroup, hr, html, i, iframe, image,
-img, input, ins, isindex, kbd, keygen, label, legend, li, link, listing, main,
-map, mark, marquee, menu, menuitem, meta, meter, multicol, nav, nextid, nobr, noembed,
-noframes, noscript, object, ol, optgroup, option, output, p, param, picture, plaintext,
-pre, progress, q, rp, rt, rtc, ruby, s, samp, script, section, select, shadow, slot, small,
-source, spacer, span, strike, strong, style, sub, summary, sup, table, tbody, td, template,
-textarea, tfoot, th, thead, time, title, tr, track, tt, u, ul, var, video, wbr, xmp, h1, h2, h3, h4, h5, h6{
-    margin: 0px;
-    padding: 0px;
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: unset;
-}
-
-h1, h2, h3, h4, h5, h6{
-    font-feature-settings: "palt";
-}
-
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx) {
-    .hoge {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-}
-
-$sky: #158eff;
-
-
-html {
-    font-size: 6.24%;
-}
-
-body {
-    background: $sky;
-    color: #fff;
-    text-align: center;
-    font-size: 21rem;
-    font-family: Raleway;
-    font-weight: 300;
-}
-
-
-input{
-    display: inline-block;
-    font-size: 21rem;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-    background: #fff;
-    vertical-align: middle;
-    box-sizing: border-box;
-    border-radius: 8pt;
-    
-    &[type="text"], &[type="password"], &[type="button"], &[type="submit"] {
-        padding: 5pt 10pt;
-    }
-
-    &[type="text"], &[type="password"], &[type="checkbox"], &[type="radio"] {
-        box-shadow: 0px 0px 3pt rgba(0,0,0,.3);
-        box-shadow: 1px 2px 2pt rgba(0,0,0,.2) inset;
-    }
-}
-input[type=checkbox], input[type=radio] {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 24px;
-    height: 24px;
-    display: inline-flex;
-    flex-flow: row;
-    justify-content: space-around;
-}
-
-input[type=checkbox]{
-    border-radius: 5px;
-    &:checked{
-        &:after{
-            content: "✔";
-            display: inline-block;
-            font-size: 18rem;
-            text-align: center;
-            width: 100%;
-        }
-    }
-}
-
-input[type=radio]{
-    border-radius: 100%;
-    &:checked{
-        background-color: rgb(73, 200, 231);
-        &:after{
-            content: "";
-            background: #000;
-            display: inline-block;
-            font-size: 12px;
-            text-align: center;
-            width: 50%;
-            height: 50%;
-            margin-top: 4px;
-            border-radius: 100%;
-        }
-    }
-}
-
-select {
-    opacity: 0;
-    -webkit-appearance: none;
-    appearance: none;
-    display: inline-block;
-    font-size: 16px;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-    vertical-align: middle;
-    background: #fff;
-    padding: 5px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-}
-
-.select_apiarance_button{
-    width: 60px;
-    display: block;
-    text-align: right;
-    padding-right: 5px;
+#app {
+    padding-bottom: 10vh;
 }
 
 #app > .wrapper {
     margin: 0px auto;
-    width: 70vw;
+    @media screen and (min-width: 415px) {
+        width: 70vw;
+    }
 }
 
 #logo {
     margin: 0px auto;
-    margin-top: 10vh;
+    padding-top: 10vh;
     margin-bottom: 3vh;
     text-align: center;
     .adjuster {
@@ -150,6 +22,7 @@ select {
         background-color: #fff;
         border-radius: 100%;
         color: $sky;
+        font-family: 'Fredoka One';
         border: solid 30px #fff;
         display: block;
         width: 60px;
@@ -160,8 +33,22 @@ select {
     }
 }
 
-#login-form {
+#page-title {
+    font-family: 'Fredoka One';
+    margin: 0px auto;
+    margin-bottom: 5vh;
+    color: #fff;
+    font-size: 30rem;
+    font-weight: normal;
+    @media screen and (max-width: 414px) {
+        width: 40vw;
+    }
+}
+
+.form-group {
     .form-item {
+        position: relative;
+
         &+.form-item {
             margin-top: 20px;
         }
@@ -170,10 +57,31 @@ select {
             display: block;
             line-height: 180%;
         }
+
+        .form-error-display {
+            display: inline-block;
+            background: rgba(255,255,255,.8);
+            box-shadow: 0px 0px 30px rgba(80,80,80,0.4);
+            box-sizing: border-box;
+            font-size: 14rem;
+            color: #f00;
+            padding: 8pt;
+            border-radius: 8pt;
+            text-shadow: 0px 0px 3px #fff;
+        }
     }
 
     .form-controlls {
         margin-top: 40px;
+    }
+
+    .foget-password {
+        margin-top: 20px;
+        a {
+            font-size: 14rem;
+            color: #fff;
+            text-decoration: none;
+        }
     }
 }
 
@@ -189,4 +97,59 @@ select {
     border-radius: 8pt;
     padding: 5pt 10pt;
     font-weight: 300;
+    cursor: pointer;
+}
+
+.bord {
+    margin: 5vh auto;
+    background: rgba(255,255,255,.8);
+    padding: 1vh;
+    border-radius: 8pt;
+    width: 30vw;
+    min-width: 320px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0px 0px 30px rgba(80,80,80,0.4);
+
+    h2, h3 {
+        padding: 6pt 12pt;
+        text-align: left;
+        color: $sky;
+        font-weight: 600;
+        font-size: 16rem;
+    }
+
+    p {
+        box-sizing: border-box;
+        font-weight: 400;
+        padding: 6pt 12pt;
+        margin: 9pt;
+        margin-left: 20pt;
+        text-align: left;
+        color: lighten($sky, 10);
+        font-size: 16rem;
+        &+p {
+            margin-top: 18pt;
+        }
+    }
+
+    &#index-footer {
+        .say-other {
+            padding: 6pt 12pt;
+            text-align: left;
+            color: $sky;
+            font-weight: 600;
+        }
+
+        .say-postime {
+            box-sizing: border-box;
+            font-weight: 400;
+            padding: 6pt 12pt;
+            margin: 9pt;
+            margin-bottom: 18pt;
+            margin-left: 20pt;
+            text-align: left;
+            color: lighten($sky, 10);
+        }
+    }
 }
