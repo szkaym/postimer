@@ -118,3 +118,14 @@ return [
     * デフォルトだと/homeになっている
 
 
+## おまけ
+
+ログインフォームではパスワードフィールドのname属性は下記のようにする必要がある。
+
+```
+<span class="form-input">
+    {{ Form::input('password', 'password', old('password'), array('required'=>'required')) }}
+</span>
+```
+
+非常にわかりづらかった。

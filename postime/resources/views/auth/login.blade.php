@@ -4,16 +4,28 @@
         <h1 id="logo"><span class="adjuster">P</span></h1>
         <h2 id="page-title">post it your work timestamp</h2>
         <div id="login-form" class="form-group">
-            {{Form::open(['url'=>'/'])}}
+            {{Form::open(['route'=>'login'])}}
 
             <div class="form-item">
                 <label class="form-label">your email</label>
                 <span class="form-input">{{ Form::input('text', 'user_email', old('user_email'), array('required'=>'required')) }}</span>
+                
+                @if ($errors->has('user_email'))
+                <span class="form-error-display">
+                    {{ $errors->first('user_email') }}
+                </span>
+                @endif
             </div>
 
             <div class="form-item">
                 <label class="form-label">password</label>
-                <span class="form-input">{{ Form::input('password', 'user_password', old('user_email'), array('required'=>'required')) }}</span>
+                <span class="form-input">{{ Form::input('password', 'password', old('password'), array('required'=>'required')) }}</span>
+                
+                @if ($errors->has('password'))
+                <span class="form-error-display">
+                    {{ $errors->first('password') }}
+                </span>
+                @endif
             </div>
 
             <div class="form-item">
@@ -27,7 +39,7 @@
                 {{ Form::submit('Sign in') }}
 
                 <div class="foget-password">
-                    <a href="{{ route('password.request') }}">forget your password?</a>
+                    <a href="{{ route('password.request') }}">forgot your password?</a>
                 </div>
             </div>
 

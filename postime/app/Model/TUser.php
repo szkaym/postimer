@@ -13,7 +13,7 @@ class TUser extends Authenticatable
     // specify of account password field
     public function getAuthPassword()
     {
-        return $this->user_passwd;
+        return $this->user_password;
     }
 
 }
