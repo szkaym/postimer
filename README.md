@@ -103,3 +103,13 @@
 
 詳細は　<https://readouble.com/laravel/5.4/ja/mix.html> 参照
 
+### Laravel mix は複数のnpmがあるとインストールできない。
+
+* 具体的に言うとnpm install しても無限ループを初めてインストールが終わらない
+* 何を言っているかわからないと思うが聞いてほしい。
+* windowsでnpmのバージョンを上げようと思うと複数の方法がある。
+* `npm-windows-upgrade`を使う方法`chocolatey`を使う方法等
+* 自分の環境で、npmがなんかおかしいと思ったら、chocolateyなどを使っていないか考えてみてほしい
+* 具体的には下記のコマンドでわかる
+* `npm ls -l -g`
+* 複数のnpmが存在したらどれか一つを残して他を削除すると治る
