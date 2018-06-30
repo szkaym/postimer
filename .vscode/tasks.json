@@ -28,6 +28,9 @@
             "windows": {
                 "command": "php -S localhost:8080 -t D:/xampp/phpMyAdmin",
             },
+            "osx": {
+                "command": "/Applications/XAMPP/bin/php -S localhost:8080 -t ../phpmyadmin",
+            },
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -80,7 +83,7 @@
                 "command": "./.vscode/watch.bat",
             },
             "osx": {
-                "command": "sudo ./.vscode/watch.sh",
+                "command": "sudo sh .vscode/watch.sh",
             },
             "presentation": {
                 "echo": true,

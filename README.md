@@ -78,7 +78,6 @@
     * 環境ごとに変える
 * それぞれ設定しておこう
 
-
 ## Laravel mix
 
 * laravelのbundler
