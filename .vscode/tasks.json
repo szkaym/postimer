@@ -26,7 +26,7 @@
             "label": "run phpMyAdmnin",
             "type": "shell",
             "windows": {
-                "command": "php -S localhost:8080 -t D:/xampp/phpMyAdmin",
+                "command": "/Applications/XAMPP/bin/php -S localhost:8080 -t D:/xampp/phpMyAdmin",
             },
             "osx": {
                 "command": "/Applications/XAMPP/bin/php -S localhost:8080 -t ../phpmyadmin",
